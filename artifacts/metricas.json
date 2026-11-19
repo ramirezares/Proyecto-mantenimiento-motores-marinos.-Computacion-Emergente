@@ -1,0 +1,362 @@
+{
+  "datos": "marine_engine_data_modificado.csv (tendencia simulada, semilla 42)",
+  "filas_prueba": 651,
+  "motores_prueba": [
+    "ENG_002",
+    "ENG_003",
+    "ENG_009",
+    "ENG_014",
+    "ENG_034",
+    "ENG_037",
+    "ENG_049"
+  ],
+  "semillas": [
+    42,
+    7,
+    123,
+    2024,
+    31415
+  ],
+  "config_mlp": {
+    "capas": 3,
+    "neuronas": 32,
+    "lr": 0.01,
+    "decaimiento": 0.0001,
+    "dropout": 0.4
+  },
+  "config_rnn": {
+    "T": 8,
+    "celda": "LSTM",
+    "unidades": 64,
+    "capas": 2,
+    "lr": 0.01,
+    "decaimiento": 0.0,
+    "dropout": 0.0
+  },
+  "resumen": {
+    "Clase mayoritaria": {
+      "exactitud": {
+        "media": 0.5514592933947773,
+        "desv": null
+      },
+      "precision_macro": {
+        "media": 0.18381976446492576,
+        "desv": null
+      },
+      "exhaustividad_macro": {
+        "media": 0.3333333333333333,
+        "desv": null
+      },
+      "f1_macro": {
+        "media": 0.23696369636963696,
+        "desv": null
+      },
+      "recall_critical": {
+        "media": 0.0,
+        "desv": null
+      },
+      "critical_como_normal": {
+        "media": 135.0,
+        "desv": null
+      }
+    },
+    "Perceptrón multicapa": {
+      "exactitud": {
+        "media": 0.6915514592933948,
+        "desv": 0.004398716148471993
+      },
+      "precision_macro": {
+        "media": 0.65500606278042,
+        "desv": 0.010899196892024733
+      },
+      "exhaustividad_macro": {
+        "media": 0.6256596142772062,
+        "desv": 0.008332013315036016
+      },
+      "f1_macro": {
+        "media": 0.6331231765150924,
+        "desv": 0.007396835761942055
+      },
+      "recall_critical": {
+        "media": 0.5170370370370371,
+        "desv": 0.03681414411789385
+      },
+      "critical_como_normal": {
+        "media": 14.2,
+        "desv": 1.9235384061671343
+      }
+    },
+    "Red recurrente (LSTM, T=8)": {
+      "exactitud": {
+        "media": 0.8132104454685101,
+        "desv": 0.016169213354151432
+      },
+      "precision_macro": {
+        "media": 0.7841858926248604,
+        "desv": 0.019431403562054927
+      },
+      "exhaustividad_macro": {
+        "media": 0.7793751657849264,
+        "desv": 0.028209374026759142
+      },
+      "f1_macro": {
+        "media": 0.7763892860351271,
+        "desv": 0.020368879196904867
+      },
+      "recall_critical": {
+        "media": 0.7348148148148148,
+        "desv": 0.10175416190515538
+      },
+      "critical_como_normal": {
+        "media": 1.8,
+        "desv": 1.3038404810405297
+      }
+    }
+  },
+  "por_clase": {
+    "mlp": {
+      "media": {
+        "VP": {
+          "Normal": 296.6,
+          "Requires Maintenance": 83.8,
+          "Critical": 69.8
+        },
+        "FP": {
+          "Normal": 59.0,
+          "Requires Maintenance": 112.2,
+          "Critical": 29.6
+        },
+        "FN": {
+          "Normal": 62.4,
+          "Requires Maintenance": 73.2,
+          "Critical": 65.2
+        },
+        "VN": {
+          "Normal": 233.0,
+          "Requires Maintenance": 381.8,
+          "Critical": 486.4
+        },
+        "precisión": {
+          "Normal": 0.8342,
+          "Requires Maintenance": 0.4274,
+          "Critical": 0.7034
+        },
+        "exhaustividad": {
+          "Normal": 0.8262,
+          "Requires Maintenance": 0.5338,
+          "Critical": 0.517
+        },
+        "especificidad": {
+          "Normal": 0.7979,
+          "Requires Maintenance": 0.7729,
+          "Critical": 0.9426
+        },
+        "tasa_FP": {
+          "Normal": 0.2021,
+          "Requires Maintenance": 0.2271,
+          "Critical": 0.0574
+        },
+        "tasa_FN": {
+          "Normal": 0.1738,
+          "Requires Maintenance": 0.4662,
+          "Critical": 0.483
+        },
+        "F1": {
+          "Normal": 0.8301,
+          "Requires Maintenance": 0.4742,
+          "Critical": 0.595
+        }
+      },
+      "desv": {
+        "VP": {
+          "Normal": 3.3615,
+          "Requires Maintenance": 6.6106,
+          "Critical": 4.9699
+        },
+        "FP": {
+          "Normal": 4.6368,
+          "Requires Maintenance": 7.1554,
+          "Critical": 4.669
+        },
+        "FN": {
+          "Normal": 3.3615,
+          "Requires Maintenance": 6.6106,
+          "Critical": 4.9699
+        },
+        "VN": {
+          "Normal": 4.6368,
+          "Requires Maintenance": 7.1554,
+          "Critical": 4.669
+        },
+        "precisión": {
+          "Normal": 0.0101,
+          "Requires Maintenance": 0.0073,
+          "Critical": 0.0223
+        },
+        "exhaustividad": {
+          "Normal": 0.0094,
+          "Requires Maintenance": 0.0421,
+          "Critical": 0.0368
+        },
+        "especificidad": {
+          "Normal": 0.0159,
+          "Requires Maintenance": 0.0145,
+          "Critical": 0.009
+        },
+        "tasa_FP": {
+          "Normal": 0.0159,
+          "Requires Maintenance": 0.0145,
+          "Critical": 0.009
+        },
+        "tasa_FN": {
+          "Normal": 0.0094,
+          "Requires Maintenance": 0.0421,
+          "Critical": 0.0368
+        },
+        "F1": {
+          "Normal": 0.0042,
+          "Requires Maintenance": 0.0196,
+          "Critical": 0.0218
+        }
+      }
+    },
+    "rnn": {
+      "media": {
+        "VP": {
+          "Normal": 317.2,
+          "Requires Maintenance": 113.0,
+          "Critical": 99.2
+        },
+        "FP": {
+          "Normal": 25.8,
+          "Requires Maintenance": 70.2,
+          "Critical": 25.6
+        },
+        "FN": {
+          "Normal": 41.8,
+          "Requires Maintenance": 44.0,
+          "Critical": 35.8
+        },
+        "VN": {
+          "Normal": 266.2,
+          "Requires Maintenance": 423.8,
+          "Critical": 490.4
+        },
+        "precisión": {
+          "Normal": 0.9269,
+          "Requires Maintenance": 0.6193,
+          "Critical": 0.8064
+        },
+        "exhaustividad": {
+          "Normal": 0.8836,
+          "Requires Maintenance": 0.7197,
+          "Critical": 0.7348
+        },
+        "especificidad": {
+          "Normal": 0.9116,
+          "Requires Maintenance": 0.8579,
+          "Critical": 0.9504
+        },
+        "tasa_FP": {
+          "Normal": 0.0884,
+          "Requires Maintenance": 0.1421,
+          "Critical": 0.0496
+        },
+        "tasa_FN": {
+          "Normal": 0.1164,
+          "Requires Maintenance": 0.2803,
+          "Critical": 0.2652
+        },
+        "F1": {
+          "Normal": 0.9033,
+          "Requires Maintenance": 0.6646,
+          "Critical": 0.7612
+        }
+      },
+      "desv": {
+        "VP": {
+          "Normal": 17.4557,
+          "Requires Maintenance": 5.9582,
+          "Critical": 13.7368
+        },
+        "FP": {
+          "Normal": 12.9692,
+          "Requires Maintenance": 12.8725,
+          "Critical": 12.8957
+        },
+        "FN": {
+          "Normal": 17.4557,
+          "Requires Maintenance": 5.9582,
+          "Critical": 13.7368
+        },
+        "VN": {
+          "Normal": 12.9692,
+          "Requires Maintenance": 12.8725,
+          "Critical": 12.8957
+        },
+        "precisión": {
+          "Normal": 0.0312,
+          "Requires Maintenance": 0.0415,
+          "Critical": 0.0718
+        },
+        "exhaustividad": {
+          "Normal": 0.0486,
+          "Requires Maintenance": 0.038,
+          "Critical": 0.1018
+        },
+        "especificidad": {
+          "Normal": 0.0444,
+          "Requires Maintenance": 0.0261,
+          "Critical": 0.025
+        },
+        "tasa_FP": {
+          "Normal": 0.0444,
+          "Requires Maintenance": 0.0261,
+          "Critical": 0.025
+        },
+        "tasa_FN": {
+          "Normal": 0.0486,
+          "Requires Maintenance": 0.038,
+          "Critical": 0.1018
+        },
+        "F1": {
+          "Normal": 0.0129,
+          "Requires Maintenance": 0.0266,
+          "Critical": 0.0398
+        }
+      }
+    }
+  },
+  "mcnemar": [
+    {
+      "semilla": 42,
+      "solo acierta MLP": 52,
+      "solo acierta RNN": 136,
+      "p (McNemar)": 0.0
+    },
+    {
+      "semilla": 7,
+      "solo acierta MLP": 56,
+      "solo acierta RNN": 141,
+      "p (McNemar)": 0.0
+    },
+    {
+      "semilla": 123,
+      "solo acierta MLP": 45,
+      "solo acierta RNN": 137,
+      "p (McNemar)": 0.0
+    },
+    {
+      "semilla": 2024,
+      "solo acierta MLP": 65,
+      "solo acierta RNN": 124,
+      "p (McNemar)": 0.0
+    },
+    {
+      "semilla": 31415,
+      "solo acierta MLP": 49,
+      "solo acierta RNN": 125,
+      "p (McNemar)": 0.0
+    }
+  ]
+}
