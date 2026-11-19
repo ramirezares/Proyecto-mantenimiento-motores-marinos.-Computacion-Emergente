@@ -32,3 +32,10 @@ Dataset [Preventive Maintenance for Marine Engines](https://www.kaggle.com/datas
     requirements.txt
 
 Los modelos se entrenan solo en Kaggle. Este repositorio guarda copias de los resultados; para reproducirlos, ejecutar el notebook en Kaggle con Save & Run All.
+
+## Interfaz
+
+    pip install -r requirements.txt
+    streamlit run app/app.py
+
+Lee los artefactos de `artifacts/`; no entrena ni ajusta nada.
